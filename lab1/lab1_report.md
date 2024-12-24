@@ -72,13 +72,13 @@ spec:
 Для создания пода воспользуемся командой:
 
 ```bash
-kubectl apply -f vault.yml
+kubectl apply -f vault.yaml
 ```
 
 Для сервиса воспользуемся командой:
 
 ```bash
-minikube kubectl -- port-forward service/vault 8200:8200
+minikube kubectl -- expose pod vault --type=NodePort --port=8200
 ```
 
 Чтобы прокинуть порт компьютера в контейнер:
